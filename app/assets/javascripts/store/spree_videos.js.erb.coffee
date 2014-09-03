@@ -23,7 +23,7 @@ class VideoManager
 		size = @calculateDimensions(true)
 		matches = @options.youtube_match.exec(youtube_link)
 		youtubeID = if matches then matches[matches.length - 1] else youtube_link
-		youtubeURL = "http://www.youtube.com/embed/" + youtubeID + "?origin=" + @options.originDomain + "&" + @options.youtube_options;
+		youtubeURL = "https://www.youtube.com/embed/" + youtubeID + "?origin=" + @options.originDomain + "&" + @options.youtube_options;
 		
 		@player_holder.html('<iframe type="text/html" width="' + size.width + '" height="' + size.height + '" src="' + youtubeURL + '" frameborder="0"></iframe>');
 	
