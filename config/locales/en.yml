@@ -1,11 +1,6 @@
 en:
-  video: Video
-  videos: Videos
-  new_video: New Video
-  youtube_ref: YouTube ID
-  product_video_index: "%{name} Videos"
-  
-  helpers:
-    label:
-      video:
-        youtube_ref: YouTube Link or Reference
+  spree:
+    new_video: "New Video"
+    add_video_to_product: "Add Video to Product"
+  youtube_ref: "YouTube Video Reference"
+  videos: "Videos"
