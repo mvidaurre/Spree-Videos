@@ -1,6 +1,10 @@
 require 'spree_core'
-require 'youtube_it'
+require 'spree_api'
+require 'spree_frontend'
+require 'spree_backend'
 require 'spree/videos/configuration'
+require 'spree_core'
+require 'youtube_it'
 
 module Spree
   module Videos

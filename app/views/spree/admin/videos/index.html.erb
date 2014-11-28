@@ -1,12 +1,12 @@
 <% content_for :page_actions do %>
     <li id="new_product_link">
-      <%= button_link_to Spree.t(:new_video), new_admin_product_video_url(@product), { :icon => 'icon-plus', :id => 'new_video_link' } %>
+      <%= button_link_to Spree.t(:new_video), new_admin_product_video_url(@product), { icon: 'icon-plus', id: 'new_video_link' } %>
     </li>
 <% end %>
 
-<%= render :partial => 'spree/admin/shared/product_sub_menu' %>
+<%= render partial: 'spree/admin/shared/product_sub_menu' %>
 
-<%= render :partial => 'spree/admin/shared/product_tabs', :locals => {:current => "Videos"} %>
+<%= render partial: 'spree/admin/shared/product_tabs', locals: {current: "Videos"} %>
 
 <fieldset>
   <legend align="center"><%= Spree.t(:add_video_to_product) %></legend>
@@ -22,8 +22,8 @@
         	<%= h video.youtube_ref %>
       </td>
       <td class="actions">
-        <%= link_to_with_icon 'icon-edit', Spree.t(:edit), edit_admin_product_video_url(@product, video), :no_text => true, :data => {:action => 'edit'} %>
-        <%= link_to_delete video, { :url => admin_product_video_url(@product, video), :no_text => true } %>
+        <%= link_to_with_icon 'icon-edit', Spree.t(:edit), edit_admin_product_video_url(@product, video), no_text: true, data: {action: 'edit'} %>
+        <%= link_to_delete video, { url: admin_product_video_url(@product, video), no_text: true } %>
       </td>
     </tr>
   <% end %>

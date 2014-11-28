@@ -1,12 +1,14 @@
 require 'spec_helper'
 
-describe 'video display' do
-  before { @product = create :product, :on_hand => 1, :name => "The Product" }
+describe 'video display', type: :feature, js: true do
+  before do 
+    @product = create :product, :name => "The Product"
+  end
   let(:product) { @product }
 
   it "should display no video player when no videos exist" do
     visit spree.product_path(product)
-    page.should_not have_css('#product-videos')
+    expect(page).to_not have_css('#product-videos')
   end
 
   it "should display a single video without thumbnails on a product page" do
@@ -16,9 +18,9 @@ describe 'video display' do
 
     visit spree.product_path(product)
 
-    page.should have_css('#product-videos')
-    page.should have_css('#video-player')
-    page.should_not have_css('#video-thumbnails')
+    expect(page).to have_css('#product-videos')
+    expect(page).to have_css('#video-player')
+    expect(page).to_not have_css('#video-thumbnails')
   end
 
   it "should display a player with multiple thumbnails when multiple thumbnails exist" do
@@ -27,13 +29,13 @@ describe 'video display' do
     v.save!
 
     v = product.videos.build
-    v.youtube_ref = '1bmQS_DGe8M'
+    v.youtube_ref = 'reMzODLo80Q'
     v.save!
 
     visit spree.product_path(product)
 
-    page.should have_css('#product-videos')
-    page.should have_css('#video-player')
-    page.should have_css('#video-thumbnails')
+    expect(page).to have_css('#product-videos')
+    expect(page).to have_css('#video-player')
+    expect(page).to have_css('#video-thumbnails')
   end
 end
